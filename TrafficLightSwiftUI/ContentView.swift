@@ -10,13 +10,14 @@ import SwiftUI
 struct ContentView: View {
     var body: some View {
         VStack {
-            Image(systemName: "globe")
-                .imageScale(.large)
-                .foregroundColor(.accentColor)
-            Text("Hello, world!")
+            ColorCircleView(color: .red)
+                .padding(.bottom, 12)
+            ColorCircleView(color: .yellow)
+                .padding(.bottom, 12)
+            ColorCircleView(color: .green)
+            Spacer()
         }
-        .padding()
-    }
+        .padding(.top, 16)
 }
 
 struct ContentView_Previews: PreviewProvider {
