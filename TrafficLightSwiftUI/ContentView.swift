@@ -18,6 +18,7 @@ struct ContentView: View {
             Spacer()
         }
         .padding(.top, 16)
+    }
 }
 
 struct ContentView_Previews: PreviewProvider {
