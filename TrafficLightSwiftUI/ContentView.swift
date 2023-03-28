@@ -14,12 +14,10 @@ struct ContentView: View {
     @State private var buttonLabel = "START"
     
     var body: some View {
-        VStack {
-            ColorCircleView(color: Color.red.opacity(redOpacity))
-                .padding(.bottom, 15)
-            ColorCircleView(color: Color.yellow.opacity(yellowOpacity))
-                .padding(.bottom, 15)
-            ColorCircleView(color: Color.green.opacity(greenOpacity))
+        VStack (spacing: 20) {
+            ColorCircleView(color: .red, opacity: redOpacity)
+            ColorCircleView(color: .yellow, opacity: yellowOpacity)
+            ColorCircleView(color: .green, opacity: greenOpacity)
             Spacer()
             startButton
         }
@@ -31,18 +29,19 @@ struct ContentView: View {
             Text(buttonLabel)
                 .font(.title)
                 .foregroundColor(Color.white)
-                .frame(width: 120, height: 50)
-                .overlay(
-                    RoundedRectangle(cornerRadius: 10)
-                        .stroke(Color.white, lineWidth: 6))
-                .background(Color.blue)
-                .cornerRadius(10)
-                .shadow(radius: 10)
         }
+        .frame(width: 120, height: 50)
+        .overlay(
+            RoundedRectangle(cornerRadius: 10)
+                .stroke(Color.white, lineWidth: 6))
+        .background(Color.blue)
+        .cornerRadius(10)
+        .shadow(radius: 10)
     }
     
     private func changeLight() {
         buttonLabel = "NEXT"
+        
         if redOpacity == 1 {
             redOpacity = 0.3
             yellowOpacity = 1
